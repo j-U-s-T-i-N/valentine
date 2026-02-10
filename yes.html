@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>THANK YOU YAYAYAYA</title>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  h1 {
+    color: #ff4d6d;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: fall linear infinite;
+    opacity: 0.9;
+    z-index: 0;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Good Choice!💖 Your Wild Side would be a perfect fit for this Square Guy 👍😁👍</h1>
+
+
+  <img src="happyguy.png" alt="Celebration">
+
+  <p>
+    I can’t wait to spend Valentine’s Day with you.<br><br>
+    YAYAYAYAYAYAY ILOVEYOUILOVEYOUILOVEYOUILOVEYOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+  </p>
+</div>
+
+
+<script>
+function createConfetti() {
+  const colors = ['#ff4d6d', '#ffd166', '#06d6a0', '#4d96ff', '#c77dff'];
+
+  for (let i = 0; i < 90; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.animationDuration = 2 + Math.random() * 3 + 's';
+    confetti.style.animationDelay = Math.random() * 2 + 's';
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 7000);
+  }
+}
+
+window.onload = createConfetti;
+</script>
+
+</body>
+</html>
